@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.itheima.dao.CheckGroupDao">
+    <!--查询所有-->
+    <select id="findAll" resultType="com.itheima.pojo.CheckGroup">
+        select * from t_checkgroup
+    </select>
+
+    <select id="findPage" resultType="com.itheima.pojo.CheckGroup">
+        select * from t_checkgroup
+        <if test="value != null and value.length > 0">
+            where code = #{value} or name =#{value} or helpCode=#{value}
+        </if>
+    </select>
+    <insert id="addCheckGroup" parameterType="com.itheima.pojo.CheckGroup" >
+        <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into t_checkgroup(code,name,sex,helpCode,remark,attention)
+        values
+        (#{code},#{name},#{sex},#{helpCode},#{remark},#{attention})
+    </insert>
+
+    <insert id="addCheckItemGroup">
+         insert into t_checkgroup_checkitem (checkgroup_id,checkitem_id) values (#{checkGroupid},#{checkitemId});
+    </insert>
+
+    <select id="countCheckItemGroupByCheckGroupId" resultType="long" >
+        select count(*) from t_checkgroup_checkitem where checkgroup_id =#{checkGroupid}
+    </select>
+    <select id="countSetmealCheckGroupByCheckGroupId" resultType="long" >
+        select count(*) from t_setmeal_checkgroup where checkgroup_id =#{checkGroupid}
+    </select>
+    <delete id="deleteCheckGroup" >
+        DELETE FROM t_checkgroup where id = #{checkGroupid};
+    </delete>
+
+
+
+
+    <select id="findCheckItemIdsByGroupId" resultType="java.lang.Integer">
+        select checkitem_id from t_checkgroup_checkitem where checkgroup_id= #{checkGroupId}
+    </select>
+
+    <select id="findById" resultType="com.itheima.pojo.CheckGroup" >
+        select * from t_checkgroup where id = #{checkGroupId}
+    </select>
+
+
+    <delete id="deleteCheckItemGroupByGroupId" >
+        delete from t_checkgroup_checkitem where checkgroup_id = #{checkGroupId}
+    </delete>
+
+    <update id="editCheckGroup" >
+        update t_checkgroup
+        <set>
+            <if test="code!=null and code.length>0">
+                code = #{code},
+            </if>
+            <if test="name!=null and name.length>0">
+                name= #{name},
+            </if>
+            <if test="helpCode!=null and helpCode.length>0">
+                helpCode = #{helpCode},
+            </if>
+            <if test="sex!=null and sex.length>0">
+                sex = #{sex},
+            </if>
+            <if test="remark!=null and remark.length>0">
+                remark = #{remark},
+            </if>
+            <if test="attention!=null and attention.length>0">
+                attention = #{attention}
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <resultMap id="checkGroupMap" type="com.itheima.pojo.CheckGroup">
+        <id property="id" column="id"/>
+        <result property="code" column="code"/>
+        <result property="name" column="name"/>
+        <result property="helpCode" column="helpCode"/>
+        <result property="sex" column="sex"/>
+        <result property="remark" column="remark"/>
+        <result property="attention" column="attention"/>
+        <collection property="checkItems" column="id" select="com.itheima.dao.CheckItemDao.findCheckItemListByGroupId"/>
+    </resultMap>
+
+    <select id="findCheckGroupListBySetmealId" resultMap="checkGroupMap">
+        select * from t_checkgroup where id  in (
+        select checkgroup_id from t_setmeal_checkgroup where setmeal_id = #{setmealId}
+        )
+    </select>
+</mapper>

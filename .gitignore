@@ -1,0 +1,15 @@
+**/test/**
+**/target/**
+**.iml
+**.png
+**.jpg
+**.ico
+**.svg
+**.gif
+**.jar
+**/constant/**
+**/util/**
+**.js
+**.css
+**/plugins/**
+**/fonts/**

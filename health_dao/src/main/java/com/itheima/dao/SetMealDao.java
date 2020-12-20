@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public interface SetMealDao {
@@ -37,4 +38,8 @@ public interface SetMealDao {
     List<Setmeal> findAll();
 
     Setmeal findSetmealDetailById(Integer setmealId);
+
+    List<Map> countSetmeal();
+
+    List<Map> findHotSetmeal();
 }

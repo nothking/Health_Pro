@@ -141,7 +141,6 @@ public class ReportServiceImpl implements ReportService {
 
         List<Map> hotSetmeal = setMealDao.findHotSetmeal();
 
-
         rsMap.put("reportDate",today);
         rsMap.put("todayNewMember",todayNewMember);
         rsMap.put("totalMember",totalMember);

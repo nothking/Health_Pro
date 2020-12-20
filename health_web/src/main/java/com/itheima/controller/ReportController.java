@@ -4,12 +4,17 @@ import com.alibaba.dubbo.config.annotation.Reference;
 import com.itheima.constant.MessageConstant;
 import com.itheima.entity.Result;
 import com.itheima.service.ReportService;
-import net.sf.jxls.transformer.Workbook;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperExportManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jxls.transformer.XLSTransformer;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
@@ -75,4 +80,43 @@ public class ReportController {
         workbook.close();
         return  null;
     }
+
+    @RequestMapping("/exportBusinesPDF")
+    public Result exportBusinesPDF(HttpServletRequest request, HttpServletResponse response) throws Exception{
+
+        try {
+            Map result = reportService.getBusinessReportData();
+
+            //取出返回结果数据，准备将报表数据写入到PDF文件中
+            List<Map> hotSetmeal = (List<Map>) result.get("hotSetmeal");
+
+            //动态获取模板文件绝对磁盘路径
+            String jrxmlPath =
+                    request.getSession().getServletContext().getRealPath("template") + File.separator + "report_business.jrxml";
+            String jasperPath =
+                    request.getSession().getServletContext().getRealPath("template") + File.separator + "report_business.jasper";
+            //编译模板
+            JasperCompileManager.compileReportToFile(jrxmlPath, jasperPath);
+
+            //填充数据---使用JavaBean数据源方式填充
+            JasperPrint jasperPrint =
+                    JasperFillManager.fillReport(jasperPath,result,
+                            new JRBeanCollectionDataSource(hotSetmeal));
+
+            ServletOutputStream out = response.getOutputStream();
+            response.setContentType("application/pdf");
+            response.setHeader("content-Disposition", "attachment;filename=report.pdf");
+
+            //输出文件
+            JasperExportManager.exportReportToPdfStream(jasperPrint,out);
+
+            return null;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false, MessageConstant.GET_BUSINESS_REPORT_FAIL);
+        }
+
+
+    }
+
 }

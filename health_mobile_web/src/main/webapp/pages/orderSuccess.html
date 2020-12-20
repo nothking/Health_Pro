@@ -31,6 +31,7 @@
                 <div class="notice-article">
                     <div class="info-title">
                         <span class="name">体检预约成功</span>
+                        <input type="button" style="margin-top: 15px" @click="downloadPDF()" value="下载PDF报告" >
                     </div>
                     <div class="notice-item">
                         <div class="item-title">预约信息</div>
@@ -64,6 +65,11 @@
             el:'#app',
             data:{
                 orderInfo:{}
+            },
+            methods :{
+                downloadPDF(){
+                    window.location.href = '/order/downloadPDF.do?id=' + id;
+                }
             },
             mounted(){
                 axios.post("/order/findById.do?id=" + id).then((response) => {

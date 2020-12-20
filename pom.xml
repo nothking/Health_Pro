@@ -44,11 +44,17 @@
         <quartz.version>2.2.1</quartz.version>
         <aliyunsdk.version>4.5.3</aliyunsdk.version>
         <freemarker.version>2.3.23</freemarker.version>
+        <jasperreports>6.8.0</jasperreports>
     </properties>
     <!-- 依赖管理标签  必须加 -->
     <dependencyManagement>
         <dependencies>
 
+            <dependency>
+                <groupId>net.sf.jasperreports</groupId>
+                <artifactId>jasperreports</artifactId>
+                <version>${jasperreports}</version>
+            </dependency>
             <dependency>
                 <groupId>org.freemarker</groupId>
                 <artifactId>freemarker</artifactId>
@@ -259,17 +265,6 @@
                 <artifactId>dom4j</artifactId>
                 <version>1.6.1</version>
             </dependency>
-<!--            <dependency>-->
-<!--                <groupId>xml-apis</groupId>-->
-<!--                <artifactId>xml-apis</artifactId>-->
-<!--                <version>1.4.01</version>-->
-<!--            </dependency>-->
-<!--            <dependency>-->
-<!--                <groupId>javax.servlet</groupId>-->
-<!--                <artifactId>servlet-api</artifactId>-->
-<!--                <version>${servlet-api.version}</version>-->
-<!--                <scope>provided</scope>-->
-<!--            </dependency>-->
         </dependencies>
     </dependencyManagement>
     <dependencies>

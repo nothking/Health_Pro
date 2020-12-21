@@ -113,7 +113,7 @@
     </select>
 
     <select id="findHotSetmeal" resultType="java.util.Map">
-        SELECT ts.`name`,count(o.id) setmeal_count, CONCAT( count(o.id)*100/(SELECT count(id) from t_order) ,'%') proportion
+        SELECT ts.`name`,count(o.id) setmeal_count, CONCAT( count(o.id)*100/(SELECT count(id) from t_order) ,'%') proportion,ts.remark
         FROM t_setmeal ts,t_order o  WHERE ts.id = o.setmeal_id GROUP BY ts.id LIMIT 4;
     </select>
 </mapper>

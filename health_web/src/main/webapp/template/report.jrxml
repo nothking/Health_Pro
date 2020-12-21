@@ -19,11 +19,12 @@
 	<field name="name" class="java.lang.String"/>
 	<field name="setmeal_count" class="java.lang.Long"/>
 	<field name="proportion" class="java.lang.String"/>
+	<field name="remark" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="129" splitType="Stretch">
+		<band height="109" splitType="Stretch">
 			<image>
 				<reportElement x="0" y="0" width="135" height="50" uuid="c1e020fe-de56-49d7-9997-22c292212b02"/>
 				<imageExpression><![CDATA["http://www.itcast.cn/2018czgw/images/logo.gif"]]></imageExpression>
@@ -52,7 +53,7 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="华文宋体" isBold="true"/>
+					<font fontName="华文宋体" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[日期]]></text>
 			</staticText>
@@ -72,9 +73,9 @@
 		</band>
 	</title>
 	<columnHeader>
-		<band height="104" splitType="Stretch">
+		<band height="261" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="-20" width="540" height="29" uuid="405ee3d1-56c4-45ae-b515-62e23ab65d2a">
+				<reportElement x="0" y="0" width="540" height="29" uuid="405ee3d1-56c4-45ae-b515-62e23ab65d2a">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box>
@@ -89,7 +90,7 @@
 				<text><![CDATA[会员数据]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="9" width="135" height="29" uuid="eae21bc8-4698-4df9-91bf-c168356cb022">
+				<reportElement x="0" y="29" width="135" height="29" uuid="eae21bc8-4698-4df9-91bf-c168356cb022">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box>
@@ -99,12 +100,12 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="华文宋体" isBold="true"/>
+					<font fontName="华文宋体" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[今日新增会员数]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="38" width="135" height="29" uuid="cab13c52-7ea3-4a38-82d5-2ef89ce35789">
+				<reportElement x="0" y="58" width="135" height="29" uuid="cab13c52-7ea3-4a38-82d5-2ef89ce35789">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box>
@@ -114,12 +115,12 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="华文宋体" isBold="true"/>
+					<font fontName="华文宋体" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[本周新增会员数]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="270" y="9" width="135" height="29" uuid="63d9e2b4-8586-43f9-a679-73faf76a42f4">
+				<reportElement x="270" y="29" width="135" height="29" uuid="63d9e2b4-8586-43f9-a679-73faf76a42f4">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box>
@@ -129,12 +130,12 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="华文宋体" isBold="true"/>
+					<font fontName="华文宋体" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[总会员数]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="270" y="38" width="135" height="29" uuid="ee8a08ae-0633-41be-918a-82ecd562e96f">
+				<reportElement x="270" y="58" width="135" height="29" uuid="ee8a08ae-0633-41be-918a-82ecd562e96f">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box>
@@ -144,12 +145,12 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="华文宋体" isBold="true"/>
+					<font fontName="华文宋体" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[本月新增会员数]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="67" width="540" height="29" uuid="806d7475-e7d8-4eaf-b7d6-d7896d55b60a">
+				<reportElement x="0" y="87" width="540" height="29" uuid="806d7475-e7d8-4eaf-b7d6-d7896d55b60a">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box>
@@ -164,7 +165,7 @@
 				<text><![CDATA[预约到诊数据]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="135" y="9" width="135" height="29" uuid="3c94cc07-780f-46a0-948b-fa467ab4b7f0">
+				<reportElement x="135" y="29" width="135" height="29" uuid="3c94cc07-780f-46a0-948b-fa467ab4b7f0">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -180,7 +181,7 @@
 				<textFieldExpression><![CDATA[$P{todayNewMember}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="405" y="9" width="135" height="29" uuid="f4ca1913-b165-471b-bde3-d5287c89bf9e">
+				<reportElement x="405" y="29" width="135" height="29" uuid="f4ca1913-b165-471b-bde3-d5287c89bf9e">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
@@ -196,7 +197,7 @@
 				<textFieldExpression><![CDATA[$P{totalMember}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="135" y="38" width="135" height="29" uuid="0593f5c4-961b-47b6-930a-39739387591e">
+				<reportElement x="135" y="58" width="135" height="29" uuid="0593f5c4-961b-47b6-930a-39739387591e">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -212,7 +213,7 @@
 				<textFieldExpression><![CDATA[$P{thisWeekNewMember}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="405" y="38" width="135" height="29" uuid="e5dfc6c8-7899-4a73-98d6-85ac46ac6264">
+				<reportElement x="405" y="58" width="135" height="29" uuid="e5dfc6c8-7899-4a73-98d6-85ac46ac6264">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -227,12 +228,8 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$P{thisMonthNewMember}]]></textFieldExpression>
 			</textField>
-		</band>
-	</columnHeader>
-	<detail>
-		<band height="388" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="-8" width="135" height="29" uuid="2e720265-f105-4346-b560-5a6a694c0781">
+				<reportElement x="0" y="116" width="135" height="29" uuid="2e720265-f105-4346-b560-5a6a694c0781">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box>
@@ -242,12 +239,12 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="华文宋体" isBold="true"/>
+					<font fontName="华文宋体" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[今日预约数]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="50" width="135" height="29" uuid="45660ba3-e97d-4645-aa05-f65f8c17237e">
+				<reportElement x="0" y="174" width="135" height="29" uuid="45660ba3-e97d-4645-aa05-f65f8c17237e">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box>
@@ -257,12 +254,12 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="华文宋体" isBold="true"/>
+					<font fontName="华文宋体" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[本月预约数]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="270" y="21" width="135" height="29" uuid="cda4784b-17a2-4943-926d-c97e1fcbe664">
+				<reportElement x="270" y="145" width="135" height="29" uuid="cda4784b-17a2-4943-926d-c97e1fcbe664">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box>
@@ -272,12 +269,12 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="华文宋体" isBold="true"/>
+					<font fontName="华文宋体" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[本周到诊数]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="270" y="-8" width="135" height="29" uuid="5684576d-6d58-45a7-95a3-af869f58538b">
+				<reportElement x="270" y="116" width="135" height="29" uuid="5684576d-6d58-45a7-95a3-af869f58538b">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box>
@@ -287,12 +284,12 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="华文宋体" isBold="true"/>
+					<font fontName="华文宋体" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[今日到诊数]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="270" y="50" width="135" height="29" uuid="aad4eb91-ffed-4496-b04b-321d1b8a45c1">
+				<reportElement x="270" y="174" width="135" height="29" uuid="aad4eb91-ffed-4496-b04b-321d1b8a45c1">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box>
@@ -302,12 +299,12 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="华文宋体" isBold="true"/>
+					<font fontName="华文宋体" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[本月到诊数]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="79" width="540" height="29" uuid="d3d9be6c-cd18-4b6a-b8e8-bc100a44a85d">
+				<reportElement x="0" y="203" width="540" height="29" uuid="d3d9be6c-cd18-4b6a-b8e8-bc100a44a85d">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box>
@@ -322,7 +319,7 @@
 				<text><![CDATA[热门套餐]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="108" width="180" height="29" uuid="f40930ef-eb8d-41ba-87b2-4a2eb77c8a20">
+				<reportElement x="0" y="232" width="135" height="29" uuid="f40930ef-eb8d-41ba-87b2-4a2eb77c8a20">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box>
@@ -332,14 +329,12 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="华文宋体" isBold="true"/>
+					<font fontName="华文宋体" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[套餐名称]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="180" y="108" width="180" height="29" uuid="a44f1ec2-0e89-46d8-8d8d-311feb763faf">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-				</reportElement>
+				<reportElement x="135" y="232" width="135" height="29" uuid="a44f1ec2-0e89-46d8-8d8d-311feb763faf"/>
 				<box>
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -347,14 +342,12 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="华文宋体" isBold="true"/>
+					<font fontName="华文宋体" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[预约数量]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="360" y="108" width="180" height="29" uuid="08238974-30f7-4182-939d-7b9326472019">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-				</reportElement>
+				<reportElement x="270" y="232" width="135" height="29" uuid="08238974-30f7-4182-939d-7b9326472019"/>
 				<box>
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -362,12 +355,12 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="华文宋体" isBold="true"/>
+					<font fontName="华文宋体" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[占比]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="135" y="-8" width="135" height="29" uuid="bce385af-9b88-4b2a-91b1-0b9ac3279ff1">
+				<reportElement x="135" y="116" width="135" height="29" uuid="bce385af-9b88-4b2a-91b1-0b9ac3279ff1">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -383,7 +376,7 @@
 				<textFieldExpression><![CDATA[$P{todayOrderNumber}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="135" y="21" width="135" height="29" uuid="f9c0ee07-bc91-4c28-b055-687679cc5e62">
+				<reportElement x="135" y="145" width="135" height="29" uuid="f9c0ee07-bc91-4c28-b055-687679cc5e62">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -399,7 +392,7 @@
 				<textFieldExpression><![CDATA[$P{thisWeekOrderNumber}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="135" y="50" width="135" height="29" uuid="6ca21a64-85d4-4099-89af-f1be3ae9f192">
+				<reportElement x="135" y="174" width="135" height="29" uuid="6ca21a64-85d4-4099-89af-f1be3ae9f192">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -415,7 +408,7 @@
 				<textFieldExpression><![CDATA[$P{thisMonthOrderNumber}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="405" y="-8" width="135" height="29" uuid="e43c0691-8617-40d1-a862-66661735286b">
+				<reportElement x="405" y="116" width="135" height="29" uuid="e43c0691-8617-40d1-a862-66661735286b">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -431,7 +424,7 @@
 				<textFieldExpression><![CDATA[$P{todayVisitsNumber}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="405" y="21" width="135" height="29" uuid="b956c916-e276-4d20-866f-932e34f30d35">
+				<reportElement x="405" y="145" width="135" height="29" uuid="b956c916-e276-4d20-866f-932e34f30d35">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -447,7 +440,7 @@
 				<textFieldExpression><![CDATA[$P{thisWeekVisitsNumber}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="405" y="50" width="135" height="29" uuid="e6e350d5-9931-4c73-a696-7fdc4e2717f2">
+				<reportElement x="405" y="174" width="135" height="29" uuid="e6e350d5-9931-4c73-a696-7fdc4e2717f2">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -463,7 +456,7 @@
 				<textFieldExpression><![CDATA[$P{thisMonthVisitsNumber}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="21" width="135" height="29" uuid="e00745b6-8cd7-4c74-a0eb-a24a040635d5">
+				<reportElement x="0" y="145" width="135" height="29" uuid="e00745b6-8cd7-4c74-a0eb-a24a040635d5">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box>
@@ -473,13 +466,31 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="华文宋体" isBold="true"/>
+					<font fontName="华文宋体" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[本周预约数]]></text>
 			</staticText>
-			<textField>
-				<reportElement x="0" y="137" width="180" height="28" uuid="880a2eb3-7b45-4cdf-b0c9-a7b49565a9a4">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f33deb30-16c4-486f-9819-9f77a267195b"/>
+			<staticText>
+				<reportElement x="405" y="232" width="135" height="29" uuid="7c95e54a-ba87-44f1-a4e4-a972eb479057"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[备注]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="28" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToTallestObject" x="270" y="0" width="135" height="28" isPrintWhenDetailOverflows="true" uuid="5b6288a9-7300-49a9-8fef-fe0ced6b7d3e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9f616600-d14c-4c60-8c09-007a4333d201"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box>
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -490,11 +501,12 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="华文楷体" isBold="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{proportion}]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement x="180" y="137" width="180" height="28" uuid="dd3da8a8-2fec-414f-b76d-e29d236df897">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToTallestObject" x="135" y="0" width="135" height="28" isPrintWhenDetailOverflows="true" uuid="dd3da8a8-2fec-414f-b76d-e29d236df897">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9baaf9cf-5cb0-483a-9f6b-da3b1afcf059"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box>
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -507,9 +519,10 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{setmeal_count}]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement x="360" y="137" width="180" height="28" uuid="5b6288a9-7300-49a9-8fef-fe0ced6b7d3e">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9f616600-d14c-4c60-8c09-007a4333d201"/>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="135" height="28" isPrintWhenDetailOverflows="true" uuid="880a2eb3-7b45-4cdf-b0c9-a7b49565a9a4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f33deb30-16c4-486f-9819-9f77a267195b"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box>
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -518,9 +531,25 @@
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="华文楷体" isBold="true"/>
+					<font fontName="华文宋体" size="14" isBold="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{proportion}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToTallestObject" x="405" y="0" width="135" height="28" isPrintWhenDetailOverflows="true" uuid="e19187f3-caf5-4648-96e5-506403db5ba0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c02b5dd3-fc95-4f88-a75a-a32b14684244"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="华文宋体" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{remark}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

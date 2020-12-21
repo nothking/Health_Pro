@@ -92,9 +92,9 @@ public class ReportController {
 
             //动态获取模板文件绝对磁盘路径
             String jrxmlPath =
-                    request.getSession().getServletContext().getRealPath("template") + File.separator + "report_business.jrxml";
+                    request.getSession().getServletContext().getRealPath("template") + File.separator + "report.jrxml";
             String jasperPath =
-                    request.getSession().getServletContext().getRealPath("template") + File.separator + "report_business.jasper";
+                    request.getSession().getServletContext().getRealPath("template") + File.separator + "report.jasper";
             //编译模板
             JasperCompileManager.compileReportToFile(jrxmlPath, jasperPath);
 
